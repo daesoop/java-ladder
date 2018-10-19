@@ -14,6 +14,7 @@ public class Ladder {
         this.people = people;
         ladders = new ArrayList<>();
         for (int i = 0; i < height; i++) {
+//                ladders.add(new Line());
             ladders.add(new Line(people.length));
         }
     }

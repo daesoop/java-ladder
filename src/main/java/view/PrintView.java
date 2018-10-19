@@ -19,24 +19,25 @@ public class PrintView {
         System.out.println(String.valueOf(stringBuilder));
     }
 
-    public static void printResult(List<Line> ladders, String[] names, String[] result) {
-        for (int i = 0; i < names.length; i++) {
-            stringBuilder.append(String.format("%-6s", names[i]));
+    public static void printResult(List<Line> ladders, String[] people, String[] result) {
+        for (int i = 0; i < people.length; i++) {
+            stringBuilder.append(String.format("%6s", people[i]));
         }
         stringBuilder.append("\n");
         for (int i = 0; i < ladders.size(); i++) {
-            insidePrintResult(ladders, names, i);
+            insidePrintResult(ladders, people, i);
             stringBuilder.append("\n");
         }
 
         for (int i = 0; i < result.length; i++) {
-            stringBuilder.append(String.format("%-6s", result[i]));
+            stringBuilder.append(String.format("%6s", result[i]));
         }
         stringBuilder.append("\n");
     }
 
-    private static void insidePrintResult(List<Line> ladders, String[] names, int i) {
-        for (int j = 0; j < names.length; j++) {
+    private static void insidePrintResult(List<Line> ladders, String[] people, int i) {
+        stringBuilder.append("     ");
+        for (int j = 0; j < people.length; j++) {
             printBar();
             stringBuilder.append(printDash(ladders, i, j));
         }

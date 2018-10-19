@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Line {
-    private int peopleNum;
     private ArrayList<Boolean> points = new ArrayList<>();
+    private int peopleNum;
 
     public Line(int peopleNum) {
         this.peopleNum = peopleNum;
@@ -15,8 +15,9 @@ public class Line {
         return points;
     }
 
-    public ArrayList<Boolean> oneLine(int peopleNum) {
-        for (int i = 0; i < peopleNum - 1; i++) {
+    public ArrayList<Boolean> oneLine(int people) {
+        this.peopleNum = people;
+        for (int i = 0; i < people - 1; i++) {
             boolean random = random();
             points.add(checkNextLine(i, random));
         }
@@ -35,6 +36,7 @@ public class Line {
         Random random = new Random();
         return random.nextBoolean();
     }
+
 
     public int leftRightMove(int possition) {
         if (possition > 0 && points.get(possition - 1)) {
