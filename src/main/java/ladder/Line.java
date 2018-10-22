@@ -37,8 +37,7 @@ public class Line {
         return random.nextBoolean();
     }
 
-
-    public int leftRightMove(int possition) {
+    public int move(int possition) {
         if (possition > 0 && points.get(possition - 1)) {
 //            System.out.println("왼쪽");
             return possition -= 1;
